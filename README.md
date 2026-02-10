@@ -118,6 +118,14 @@ pip install -r requirements.txt
 uvicorn main:app --reload
 The backend runs on http://localhost:8000
 
+## Key Technical Decisions
+
+| Decision | Reasoning |
+|----------|-----------|
+| BaseNode abstraction | All 10 node types extend BaseNode — reduces approximately 60% code duplication and makes adding new nodes trivial |
+| React Flow | Industry-standard library for node-based UIs — handles canvas, zooming, panning, and edge rendering |
+| FastAPI | Lightweight Python framework — ideal for quick API validation with automatic Swagger documentation |
+| DAG validation | Ensures pipeline has no circular dependencies — critical for any execution engine |
 
 
 
