@@ -11,14 +11,6 @@ An interactive, drag-and-drop visual pipeline builder where users can create, co
 
 ---
 
-## Screenshots
-
-| Pipeline View | Node Configuration |
-|--------------|-------------------|
-| ![pipeline](screenshots/pipeline.png) | ![nodes](screenshots/nodes.png) |
-
----
-
 ## Features
 
 - Drag-and-drop node placement on canvas
@@ -113,7 +105,7 @@ PipelineX/
 - Node.js (v16+)
 - Python (v3.8+)
 
-### Frontend
+### Frontend and Backend
 
 ```bash
 cd frontend
@@ -121,37 +113,12 @@ npm install
 npm start
 The frontend runs on http://localhost:3000
 
-### Backend
-
 cd backend
 pip install -r requirements.txt
 uvicorn main:app --reload
 The backend runs on http://localhost:8000
 
-API Endpoints
-Method	Endpoint	Description
-POST	/pipelines/parse	Validate pipeline structure
 
-Key Technical Decisions
-Decision	Reasoning
-BaseNode abstraction	All 10 node types extend BaseNode — reduces approximately 60% code duplication and makes adding new nodes trivial
-React Flow	Industry-standard library for node-based UIs — handles canvas, zooming, panning, and edge rendering
-FastAPI	Lightweight Python framework — ideal for quick API validation with automatic Swagger documentation
-DAG validation	Ensures pipeline has no circular dependencies — critical for any execution engine
 
-Future Improvements
-Save and load pipelines to database
-Execute pipeline by running data through connected nodes
-Custom node creator for user-defined node types
-Pipeline templates for common workflows
-Real-time collaboration between multiple users
-Export pipeline configuration as JSON or YAML
-Author
-Jeconiah Sontakke
 
-GitHub: @Jeconiah20
-LinkedIn: www.linkedin.com/in/jeconiah-sontakke-2b8908311
-Email: jeconiah2021@gmail.com
 
-License
-This project is open source and available under the MIT License.
