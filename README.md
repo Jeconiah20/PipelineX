@@ -64,45 +64,6 @@ The application follows a client-server architecture where the React frontend ha
 
 ---
 
-## Project Structure
-PipelineX/
-│
-├── frontend/
-│   ├── src/
-│   │   ├── nodes/
-│   │   │   ├── BaseNode.js
-│   │   │   ├── inputNode.js
-│   │   │   ├── outputNode.js
-│   │   │   ├── llmNode.js
-│   │   │   ├── textNode.js
-│   │   │   ├── APIRequestNode.js
-│   │   │   ├── ConditionNode.js
-│   │   │   ├── DelayNode.js
-│   │   │   ├── LoggerNode.js
-│   │   │   └── MathNode.js
-│   │   │
-│   │   ├── App.js
-│   │   ├── store.js
-│   │   ├── submit.js
-│   │   ├── toolbar.js
-│   │   ├── draggableNode.js
-│   │   └── ui.js
-│   │
-│   ├── public/
-│   └── package.json
-│
-├── backend/
-│   ├── main.py
-│   └── requirements.txt
-│
-├── .gitignore
-└── README.md
-
-
-
-
----
-
 ## Local Development Setup
 
 ### Prerequisites
