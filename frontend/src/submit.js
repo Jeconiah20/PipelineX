@@ -5,7 +5,7 @@ export const SubmitButton = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/pipelines/parse", {
+      const response = await fetch("https://pipelinex-api.onrender.com/pipelines/parse", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ nodes, edges }),
