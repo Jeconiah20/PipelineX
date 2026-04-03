@@ -14,30 +14,50 @@ const colors = {
 };
 
 export default function BaseNode({ title, inputs = [], outputs = [], children }) {
+  const color = colors[title] || "#ffffff";
+
   return (
     <div
       style={{
-        padding: 12,
-        borderRadius: 8,
-        minWidth: 180,
-        border: "1px solid #ccc",
-        backgroundColor: colors[title] || "#fff",
-        boxShadow: "0px 4px 12px rgba(0,0,0,0.15)",
-        transition: "transform 0.1s, box-shadow 0.2s",
+        padding: 14,
+        borderRadius: 12,
+        minWidth: 200,
+        border: "1px solid rgba(255,255,255,0.1)",
+        background: "linear-gradient(145deg, #1a1a2e, #16213e)",
+        boxShadow: "0 6px 20px rgba(0,0,0,0.4)",
         color: "#fff",
         fontFamily: "Arial, sans-serif",
+        position: "relative",
+        transition: "transform 0.15s ease, box-shadow 0.2s ease",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.transform = "scale(1.03)";
-        e.currentTarget.style.boxShadow = "0px 8px 20px rgba(0,0,0,0.25)";
+        e.currentTarget.style.transform = "translateY(-3px)";
+        e.currentTarget.style.boxShadow = "0 10px 25px rgba(0,0,0,0.6)";
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.transform = "scale(1)";
-        e.currentTarget.style.boxShadow = "0px 4px 12px rgba(0,0,0,0.15)";
+        e.currentTarget.style.transform = "translateY(0)";
+        e.currentTarget.style.boxShadow = "0 6px 20px rgba(0,0,0,0.4)";
       }}
     >
+      {/* Top Accent Bar */}
+      <div
+        style={{
+          height: 4,
+          width: "100%",
+          backgroundColor: color,
+          borderRadius: 6,
+          marginBottom: 10,
+        }}
+      />
+
       {/* Title */}
-      <div style={{ fontWeight: "bold", marginBottom: 8, fontSize: 16 }}>
+      <div
+        style={{
+          fontWeight: "bold",
+          fontSize: 15,
+          marginBottom: 6,
+        }}
+      >
         {title}
       </div>
 
@@ -48,7 +68,12 @@ export default function BaseNode({ title, inputs = [], outputs = [], children })
           type="target"
           position={Position.Left}
           id={id}
-          style={{ top: 40 + index * 20, backgroundColor: "#333" }}
+          style={{
+            top: 50 + index * 20,
+            backgroundColor: color,
+            width: 10,
+            height: 10,
+          }}
         />
       ))}
 
@@ -59,12 +84,19 @@ export default function BaseNode({ title, inputs = [], outputs = [], children })
           type="source"
           position={Position.Right}
           id={id}
-          style={{ top: 40 + index * 20, backgroundColor: "#333" }}
+          style={{
+            top: 50 + index * 20,
+            backgroundColor: color,
+            width: 10,
+            height: 10,
+          }}
         />
       ))}
 
-      {/* Custom content */}
-      <div style={{ marginTop: 4 }}>{children}</div>
+      {/* Content */}
+      <div style={{ fontSize: 13, opacity: 0.9 }}>
+        {children}
+      </div>
     </div>
   );
 }

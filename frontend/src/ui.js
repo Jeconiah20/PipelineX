@@ -104,7 +104,7 @@ export const PipelineUI = () => {
     }, []);
 
     return (
-        <div ref={reactFlowWrapper} style={{width: '100vw', height: '70vh'}}>
+        <div ref={reactFlowWrapper} style={{ width: '100%', height: '100vh' }}>
             <ReactFlow
                 nodes={nodes}
                 edges={edges}
@@ -118,11 +118,47 @@ export const PipelineUI = () => {
                 proOptions={proOptions}
                 snapGrid={[gridSize, gridSize]}
                 connectionLineType='smoothstep'
+                style={{
+                  backgroundColor: '#0d1117',
+                }}
             >
-                <Background color="#e0e0e0" gap={20} />
+                <Background 
+                  variant="dots" 
+                  color="#2a2f3a" 
+                  gap={20} 
+                  size={2} 
+                />
 
-                <Controls />
-                <MiniMap />
+                <Controls 
+                  style={{
+                    backgroundColor: '#1a1a2e',
+                    borderRadius: '8px',
+                    border: '1px solid #2a2f3a',
+                  }}
+                />
+
+                <MiniMap 
+                  style={{
+                    backgroundColor: '#1a1a2e',
+                    border: '1px solid #2a2f3a',
+                    borderRadius: '8px',
+                  }}
+                  nodeColor={(node) => {
+                    const colors = {
+                      customInput: '#FFD700',
+                      llm: '#4CAF50',
+                      customOutput: '#FF5722',
+                      text: '#2196F3',
+                      math: '#9C27B0',
+                      condition: '#FF9800',
+                      delay: '#607D8B',
+                      apiRequest: '#009688',
+                      logger: '#795548',
+                    };
+                    return colors[node.type] || '#fff';
+                  }}
+                  maskColor="rgba(0, 0, 0, 0.6)"
+                />
             </ReactFlow>
         </div>
     )
