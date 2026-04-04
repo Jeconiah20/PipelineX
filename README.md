@@ -64,7 +64,7 @@ The application follows a client-server architecture where the React frontend ha
 
 ---
 
-## Local Development Setup
+## Local Development Setup-
 
 ### Prerequisites
 
