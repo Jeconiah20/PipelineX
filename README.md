@@ -4,13 +4,6 @@ An interactive, drag-and-drop visual pipeline builder where users can create, co
 
 ---
 
-## Live Demo
-
-- **Frontend:** [https://piplinex-frontend.netlify.app](https://piplinex-frontend.netlify.app)
-- **Backend API:** [https://pipelinex-api.onrender.com/docs](https://pipelinex-api.onrender.com/docs)
-
----
-
 ## Features
 
 - Drag-and-drop node placement on canvas
